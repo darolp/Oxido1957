@@ -37,7 +37,7 @@ server.post('/payment', (req, res) => {
 })
 
 //server
-server.listen(3001, () => {
+server.listen('https://oxido1957-he5g.vercel.app', () => {
   console.log('is running')
 })
 
