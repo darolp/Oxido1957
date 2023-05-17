@@ -73,7 +73,7 @@ function Cart() {
     })
 
     const order = await productService.newOrder(purchaseData);
-    axios.post('oxido1957-he5g.vercel.app/payment', purchaseData.items).then((res) => window.location.href = res.data.response.body.init_point)
+    axios.post('https://oxido1957-he5g.vercel.app/payment', purchaseData.items).then((res) => window.location.href = res.data.response.body.init_point)
     // navigate(`/checkOut/${order.id}`);
     cleanCart();
   }
