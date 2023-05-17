@@ -40,3 +40,5 @@ server.post('/payment', (req, res) => {
 server.listen(3001, () => {
   console.log('is running')
 })
+
+module.exports = server
