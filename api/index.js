@@ -26,7 +26,7 @@ server.post('/payment', (req, res) => {
   let preference = {
     items: products,
     back_urls: {
-      success: 'http://localhost:3000/checkout',
+      success: 'https://oxido1957.vercel.app/checkout',
       faliure: '',
       pending: '',
     },

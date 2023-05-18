@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import env from "react-dotenv";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -13,7 +12,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCwsJhTzf2zg4Cx8HATXt8QqSyz7MQX2YE",
+  apiKey: process.env.KEY_FIRESTORE,
   authDomain: "oxido1957-cb4b7.firebaseapp.com",
   projectId: "oxido1957-cb4b7",
   storageBucket: "oxido1957-cb4b7.appspot.com",
