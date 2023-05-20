@@ -1,7 +1,6 @@
 import React from 'react'
 import facebook from '../images/facebook.svg'
 import instagram from '../images/instagram.svg'
-import whatsapp from '../images/whatsapp.svg'
 import logo from '../images/logo.jpg'
 
 function Footer({isAdminPage}) {
@@ -10,8 +9,8 @@ function Footer({isAdminPage}) {
     <div className='footer'>
       <div className='footerRedes'>
         <h4>Seguinos en nuestras redes:</h4>
-        <a target='_blank' href='https://instagram.com'><img src={instagram} alt='redes' />Instagram</a> 
-        <a target='_blank' href='https://facebook.com'><img src={facebook} alt='redes' />Facebook</a> 
+        <a target='_blank' href='https://instagram.com/oxido.1957'><img src={instagram} alt='redes' />Instagram</a> 
+        <a target='_blank' href='https://www.facebook.com/Motosenderismo?mibextid=ZbWKwL'><img src={facebook} alt='redes' />Facebook</a> 
       </div>
       <div className='footerLogo'>
         <img src={logo} alt='logo'/>

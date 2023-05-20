@@ -43,10 +43,17 @@ function ItemListContainer() {
       <h1 className='title'>PRODUCTOS</h1>
       
       <div className='productsFilter'>
-        <Link to={'/products'}>Todo</Link>
-        <Link to={'/products/remera'}>Remeras</Link>
-        <Link to={'/products/campera'}>Camperas</Link>
-        <Link to={'/products/buzo'}>Buzos</Link>
+        <Link to={'/products'}>Todo </Link>
+        <div>|</div>
+        <Link to={'/products/remera'}>Remeras </Link>
+        <div>|</div>
+        <Link to={'/products/campera'}>Camperas </Link>
+        <div>|</div>
+        <Link to={'/products/campera'}>Camisas </Link>
+        <div>|</div>
+        <Link to={'/products/campera'}>Accesorios </Link>
+        <div>|</div>
+        <Link to={'/products/buzo'}>Buzos </Link>
       </div>
 
       {productList.length > ITEMS_PER_PAGE && (

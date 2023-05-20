@@ -1,4 +1,8 @@
 /* FONTS */
+@font-face {
+  font-family: 'BeTrueToYourSchool-Regular';
+  src: url(./fonts/BeTrueToYourSchool-Regular.ttf);
+}
 
 @font-face {
   font-family: 'BeeRidgeVintageBold';
@@ -10,6 +14,12 @@
   src: url('./fonts/Rusty\ Fever_Bold_DEMO.otf') format('OpenType');
 }
 
+
+:root {
+  --fuente-principal: Arial, sans-serif;
+  --fuente-alternativa:'BeTrueToYourSchool-Regular';
+  --fuente-extra: 'BeeRidgeVintageBold';
+}
 /* NORMALIZE */
 
 * {
@@ -27,9 +37,19 @@ body {
 .title {
   color: #D49B41;
   font-size: 3rem;
-  font-family: 'Rusty Fever_Bold_DEMO';
+  font-family: var(--fuente-alternativa);
   margin: 20px 0;
   text-align: center;
+}
+
+
+.whatsapp{
+  height: 55px;
+  width: 55px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
 }
 
 /* NAVBAR */
@@ -98,11 +118,11 @@ body {
 
 .listItem {
   list-style: none;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 1rem;
   color: #D49B41;
   cursor: pointer;
-  font-family: 'Rusty Fever_Bold_DEMO', sans-serif;
+  font-family: var(--fuente-alternativa), sans-serif;
 }
 
 
@@ -212,10 +232,10 @@ body {
 }
 
 .hero>h1 {
-  font-size: 5rem;
-  font-family: 'BeeRidgeVintageBold', sans-serif;
-  color: #D49B41;
-  padding-top: 100px;
+  font-size: 8rem;
+  font-family: var(--fuente-alternativa), sans-serif;
+  color:#D49B41;
+  padding-top: 130px; 
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -224,7 +244,7 @@ body {
 
 .hero>h1>span {
   font-size: 1.3rem;
-  font-family: 'BeeRidgeVintageBold', 'GT Pressura Mono';
+  font-family: var(--fuente-alternativa), 'GT Pressura Mono';
   background-color: #444444;
   color: #fff;
   padding: 5px;
@@ -320,8 +340,8 @@ body {
 
 .featuredProductsTitle {
   color: #D49B41;
-  font-size: 3rem;
-  font-family: 'Rusty Fever_Bold_DEMO';
+  font-size: 5rem;
+  font-family: var(--fuente-alternativa);;
   margin: 20px 0;
   text-align: center;
 }
@@ -439,12 +459,14 @@ body {
 }
 
 .pagination button {
-  background-color: #ff5a5a;
+  background-color: #E11B19;
   border: 1px solid black;
   border-radius: 10px;
   margin: 0 10px;
   padding: 5px;
   color: #eee;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -455,6 +477,13 @@ body {
 
 }
 
+/* ItemListContainer */
+
+.productsFilter a:hover{
+  color: #ddd;
+  transform: scale(1.1);
+  transition: all .7s;
+}
 
 /* PRODUCT CARD */
 
@@ -487,8 +516,9 @@ body {
 }
 
 .productCard-text>h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .productCard-buttons {
@@ -524,15 +554,25 @@ body {
 .productCard-buttons-detail {
   padding: 5px;
   border-radius: 20px;
-  border: 1px solid green;
-  background-color: rgb(37, 90, 43);
+  /* border: 1px solid green;
+  background-color: rgb(37, 90, 43); */
+  
+  background-color: #D49B41; 
+  color: #eee;
+  
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .productCard-buttons-addCart {
   padding: 5px;
   border-radius: 20px;
-  border: 1px solid rgb(235, 13, 13);
-  background-color: rgb(192, 56, 19);
+  /* border: 1px solid rgb(235, 13, 13); */
+  background-color: #E11B19;
+  border: 1px solid #f80905;
+  color: #eee;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .tags {
@@ -911,10 +951,16 @@ body {
 }
 
 .contactForm {
-  width: 600px;
-  background-color: #c08860bb;
+  width: 500px;
+  background-color: #aaa;
   padding: 30px;
   border-radius: 20px;
+}
+
+.contactForm button{
+  width: 200px;
+  height: 1.2rem;
+  margin: 10px auto;
 }
 
 /* CheckOut */
@@ -1002,6 +1048,41 @@ body {
   .footerLogo {
     order: -1;
   }
+}
+
+/* LogIn Admin */
+
+.container-form-login{
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+.logInForm{
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 300px;
+  background-color: #aaa;
+  border-radius: 20px;
+  padding: 90px 20px 20px 20px;
+  gap: 60px;
+}
+
+.logInForm input{
+  height: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.logInForm button{
+  background-color: tomato;
+  height: 3rem;
+  width: 10rem;
+  margin: auto;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #ddd;
 }
 
 /* ADMIN */

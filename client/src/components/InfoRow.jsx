@@ -9,10 +9,10 @@ function InfoRow() {
   return (
     <>
       <div className='InfoRow'>
-        <InfoCard icon={coins} title={'Envios a todo el pais'} text={'comprando 5 prendas o mas el envio es sin cargo'}/>
-        <InfoCard icon={global} title={'Envios a todo el pais'} text={'comprando 5 prendas o mas el envio es sin cargo'}/>
-        <InfoCard icon={percent} title={'Envios a todo el pais'} text={'comprando 5 prendas o mas el envio es sin cargo'}/>
-        <InfoCard icon={shopping} title={'Envios a todo el pais'} text={'comprando 5 prendas o mas el envio es sin cargo'}/>
+        <InfoCard icon={coins} title={'Paga con comodidad'} text={'Acpetamos varios medios de pago!'}/>
+        <InfoCard icon={global} title={'Envios a todo el pais'} text={'Los envios son sin cargo a partir de los $20000'}/>
+        <InfoCard icon={percent} title={'Encontra el mejor precio'} text={'En nuestra tienda encontraras la mejor calidad al mejor precio.'}/>
+        <InfoCard icon={shopping} title={'Productos de la mejor calidad'} text={'Descubre nuestra amplia selección de productos de la mejor calidad'}/>
       </div>
     </>
   )

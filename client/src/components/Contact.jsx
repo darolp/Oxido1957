@@ -20,7 +20,7 @@ function Contact() {
 
   return (
     <div className='contactContainer'>
-      <div className='contactForm'>
+      <form className='contactForm'>
         <FormControl isRequired>
           <FormLabel>Nombre</FormLabel>
           <Input type='text' value={contactInfo.name} name="name" onChange={handleInputChange} />
@@ -33,7 +33,8 @@ function Contact() {
           <FormLabel>Mensaje</FormLabel>
           <Textarea placeholder='Escriba su mensaje aqui' value={contactInfo.message} name='message' onChange={handleInputChange}/>
         </FormControl>
-      </div>
+        <button>Enviar</button>
+      </form>
     </div>
   )
 }

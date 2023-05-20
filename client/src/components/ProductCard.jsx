@@ -70,7 +70,7 @@ function ProductCard({ id, img, title, price, stock }) {
     );
 
     //una vez agregado o actualizado el item se reincian los estados
-    notify("se agregó correctamente al carrito")
+    notify("Se agregó correctamente al carrito")
     resetInputs()
   };
 

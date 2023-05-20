@@ -11,6 +11,8 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
 import CheckOut from './components/CheckOut'
 import Admin from './components/admin/Admin'
+import LogIn from './components/admin/LogIn'
+
 function App() {
   const [isAdminPage, setIsAdminPage] = useState(false);
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkOut:id' element={<CheckOut />} />
+          <Route path='/login' element={<LogIn setIsAdminPage={setIsAdminPage} />} />
           <Route path='/admin' element={<Admin setIsAdminPage={setIsAdminPage} />} />
           <Route path='/admin/:adminPanel' element={<Admin setIsAdminPage={setIsAdminPage} />} />
         </Routes>
