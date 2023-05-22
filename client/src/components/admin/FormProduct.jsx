@@ -67,6 +67,8 @@ function FormProduct({ handleSubmit, handleProductInfoChange, newProduct }) {
             <option value={'buzo'}>buzo</option>
             <option value={'campera'}>campera</option>
             <option value={'pantalon'}>pantalon</option>
+            <option value={'camisas'}>camisas</option>
+            <option value={'accesorios'}>accesorios</option>
           </select>
         </label>
 

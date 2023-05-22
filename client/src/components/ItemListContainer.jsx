@@ -49,9 +49,9 @@ function ItemListContainer() {
         <div>|</div>
         <Link to={'/products/campera'}>Camperas </Link>
         <div>|</div>
-        <Link to={'/products/campera'}>Camisas </Link>
+        <Link to={'/products/camisas'}>Camisas </Link>
         <div>|</div>
-        <Link to={'/products/campera'}>Accesorios </Link>
+        <Link to={'/products/accesorios'}>Accesorios </Link>
         <div>|</div>
         <Link to={'/products/buzo'}>Buzos </Link>
       </div>

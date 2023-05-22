@@ -81,6 +81,8 @@ function ModalEditProduct({ handleModal, handleEdit, handleRemoveImg, product, h
               <option value={'buzo'}>buzo</option>
               <option value={'campera'}>campera</option>
               <option value={'pantalon'}>pantalon</option>
+              <option value={'camisas'}>camisas</option>
+              <option value={'accesorios'}>accesorios</option>
             </select>
           </label>
 

@@ -1,15 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { context } from '../context/Context';
 import { productService } from '../services/data';
-import CartItem from './CartItem'
-import { useNavigate } from "react-router-dom";
+import CartItem from './CartItem';
 import Modal from './Modal';
-import axios from 'axios'
+import axios from 'axios';
 function Cart() {
 
   const { cartList, removeCartItem, cleanCart, totalItems } = useContext(context);
-
-  const navigate = useNavigate();
 
   const [total, setTotal] = useState(0);
 
