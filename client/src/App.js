@@ -26,7 +26,7 @@ function App() {
           <Route path='/product/:id' element={<ItemDetailContainer />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
-          <Route path='/checkOut:id' element={<CheckOut />} />
+          <Route path='/checkout:id' element={<CheckOut />} />
           <Route path='/login' element={<LogIn setIsAdminPage={setIsAdminPage} />} />
           <Route path='/admin' element={<Admin setIsAdminPage={setIsAdminPage} />} />
           <Route path='/admin/:adminPanel' element={<Admin setIsAdminPage={setIsAdminPage} />} />
