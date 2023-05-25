@@ -850,6 +850,13 @@ body {
   background-color: #ed0c0c76;
 }
 
+.envioGratis{
+  width: fit-content;
+  background-color: #aaa;
+  border-radius: 10px;
+  padding: 2px;
+}
+
 @media screen and (max-width: 480px) {
   .cartItemContainer {
     display: flex;

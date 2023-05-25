@@ -10,6 +10,8 @@ function Cart() {
 
   const [total, setTotal] = useState(0);
 
+  const [envioGratis, setEnvioGratis] = useState();
+
   const [productList, setProductList] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
@@ -23,6 +25,10 @@ function Cart() {
   });
 
   const [validMail, setValidMail] = useState(true);
+
+  useEffect(() => {
+    setEnvioGratis(total >= 20000);
+  }, [total])
 
   const handleCheckEmail = (e) => setValidMail(e.target.value === buyerInfo.email);
 
@@ -43,11 +49,11 @@ function Cart() {
 
   const handleCompletePurchase = async (e) => {
     e.preventDefault()
-    if(!validMail){
+    if (!validMail) {
       alert('Los correos electrónicos ingresados no coinciden. Por favor, inténtelo de nuevo.');
       return;
     }
-    
+
     const purchaseData = {
       buyer: {
         name: buyerInfo.name,
@@ -56,8 +62,8 @@ function Cart() {
         address: buyerInfo.address,
         cp: buyerInfo.cp
       },
-      items: cartList.map(item => ({ id: item.idProducto, unit_price: item.price, title: item.title , size: item.size, quantity: item.amount, currency_id: "ARS"})),
-      timeStamp: new Date().toLocaleString('es-AR', { timeZone: 'UTC', year: "numeric", month:"numeric", day: "numeric" }),
+      items: cartList.map(item => ({ id: item.idProducto, unit_price: item.price, title: item.title, size: item.size, quantity: item.amount, currency_id: "ARS" })),
+      timeStamp: new Date().toLocaleString('es-AR', { timeZone: 'UTC', year: "numeric", month: "numeric", day: "numeric" }),
       state: "Pendiente",
       total: total
     };
@@ -71,7 +77,6 @@ function Cart() {
 
     const order = await productService.newOrder(purchaseData);
     axios.post('https://oxido1957-he5g.vercel.app/payment', purchaseData.items).then((res) => window.location.href = res.data.response.body.init_point)
-    // navigate(`/checkOut/${order.id}`);
     cleanCart();
   }
 
@@ -93,11 +98,13 @@ function Cart() {
         <div className='cartInfo'>
           <p>Total a pagar: ${total}</p>
           <p>Cantidad de productos: {totalItems}</p>
+          <p style={{ color: envioGratis ? 'green' : 'red'}} className='envioGratis' > {envioGratis ? 'Tu compra supera los $20.000. El envio es GRATIS!!' : 'Tu compra no supera los $20.000. El precio del envio lo podes consultar por nuestro whatsapp'}</p>
         </div>
         <button disabled={cartList.length === 0} className='cartBtn' onClick={handlePay}>Pagar</button>
-      </div>
+      </div >
 
-      {showModal && <Modal setShowModal={setShowModal} handleCompletePurchase={handleCompletePurchase} handleBuyerInfoChange={handleBuyerInfoChange} buyerInfo={buyerInfo} handleCheckEmail={handleCheckEmail} validMail={validMail} />}
+      {showModal && <Modal setShowModal={setShowModal} handleCompletePurchase={handleCompletePurchase} handleBuyerInfoChange={handleBuyerInfoChange} buyerInfo={buyerInfo} handleCheckEmail={handleCheckEmail} validMail={validMail} />
+      }
 
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import logo from '../images/logo.jpg'
 import CartWidget from './CartWidget'
 import menu from '../images/menu.svg'
@@ -9,22 +9,6 @@ function NavBar({isAdminPage}) {
   
   const navBarRef = useRef();
   const logoContainerRef = useRef();
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 150 ) {
-  //       navBarRef.current.className = 'navBar navBarAnimation'
-  //       logoContainerRef.current.className = 'logoContainer logoContainerAnimation'
-  //     } else {
-  //       navBarRef.current.className = 'navBar'
-  //       logoContainerRef.current.className = 'logoContainer'
-  //     }
-  //   }
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   }
-  // }, [])
 
   const [showMenu, setShowMenu] = useState(false);
 
