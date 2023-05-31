@@ -33,7 +33,7 @@ function ListOrdesItem({ order, deleteOrder, handleCheck }) {
         {items.map((item, index) => <ListOrdersItemProductInfo key={index} product={item} />)}
       </div>
       <div className='orderItemButtons'>
-        <div className='trash' onClick={() => deleteOrder(id)}><img src={trash} /></div>
+        <div className='trash' onClick={() => deleteOrder(id)}><img src={trash} alt='basura' /></div>
         <div className='date'>{timeStamp}</div>
         <div className='date'>${total}</div>
         <div className={state === 'enviada' ?  'check checked' : 'check'}>

@@ -1,4 +1,4 @@
-import { getFirestore, doc, getDoc, collection, getDocs, addDoc, updateDoc, setDoc, deleteDoc, Firestore } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, addDoc, updateDoc, setDoc, deleteDoc } from 'firebase/firestore'
 
 // PRODUCTS
 const getAll = async () => {
