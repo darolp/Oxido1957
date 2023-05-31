@@ -450,6 +450,7 @@ body {
   justify-content: center;
   margin-right: 30px;
   gap: 10px;
+  flex-wrap: wrap ;
 }
 
 .pagination {
@@ -475,6 +476,9 @@ body {
     justify-content: center;
   }
 
+  .productsList {
+    justify-content: center;
+  }
 }
 
 /* ItemListContainer */
@@ -553,10 +557,7 @@ body {
 
 .productCard-buttons-detail {
   padding: 5px;
-  border-radius: 20px;
-  /* border: 1px solid green;
-  background-color: rgb(37, 90, 43); */
-  
+  border-radius: 20px;  
   background-color: #D49B41; 
   color: #eee;
   
@@ -801,7 +802,6 @@ body {
   gap: 20px 0;
   padding: 50px;
   height: 100%;
-  margin-top: 70px;
   margin: 70px 40px 0 40px;
 }
 
@@ -858,10 +858,19 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  .cartContainer{
+    padding: 10px;
+  }
+  
   .cartItemContainer {
     display: flex;
     flex-direction: column;
     padding-top: 15px;
+  }
+
+  .cartItemImg {
+    height: 120px;
+    width: 120px;
   }
 }
 
@@ -1519,7 +1528,7 @@ body {
   display: none;
 }
 
-.checkOrder + .customCheck::before{
+.customCheck::before{
   content: "";
   display: inline-block;
   width: 25px;
@@ -1531,7 +1540,7 @@ body {
   cursor: pointer;
 }
 
-.checkOrder:checked + .customCheck::before{
+.checked .customCheck::before{
   background-color: rgb(79, 215, 79);
   content: url(./images/check-fill.svg);
 }

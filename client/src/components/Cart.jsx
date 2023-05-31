@@ -98,7 +98,7 @@ function Cart() {
         <div className='cartInfo'>
           <p>Total a pagar: ${total}</p>
           <p>Cantidad de productos: {totalItems}</p>
-          <p style={{ color: envioGratis ? 'green' : 'red'}} className='envioGratis' > {envioGratis ? 'Tu compra supera los $20.000. El envio es GRATIS!!' : 'Tu compra no supera los $20.000. El precio del envio lo podes consultar por nuestro whatsapp'}</p>
+          <p style={{ color: envioGratis ? 'green' : 'red' }} className='envioGratis' > {envioGratis ? 'Tu compra supera los $20.000. El envio es GRATIS!!' : 'Tu compra no supera los $20.000. El precio del envio lo podes consultar por nuestro whatsapp'}</p>
         </div>
         <button disabled={cartList.length === 0} className='cartBtn' onClick={handlePay}>Pagar</button>
       </div >

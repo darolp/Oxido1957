@@ -1,8 +1,8 @@
 import React from 'react'
 import ListOrdersItemProductInfo from './ListOrdersItemProductInfo';
 import trash from '../../images/delete-bin-5-line.svg'
-function ListOrdesItem({ order }) {
-  const { buyer, items, id, timeStamp, total } = order;
+function ListOrdesItem({ order, deleteOrder, handleCheck }) {
+  const { buyer, items, id, timeStamp, total, state } = order;
   const { name, phone, email, address, cp } = buyer;
 
   return (
@@ -33,11 +33,11 @@ function ListOrdesItem({ order }) {
         {items.map((item, index) => <ListOrdersItemProductInfo key={index} product={item} />)}
       </div>
       <div className='orderItemButtons'>
-        <div className='trash'><img src={trash} /></div>
+        <div className='trash' onClick={() => deleteOrder(id)}><img src={trash} /></div>
         <div className='date'>{timeStamp}</div>
         <div className='date'>${total}</div>
-        <div className='check'>
-          <input type='checkbox' id={id} className='checkOrder' />
+        <div className={state === 'enviada' ?  'check checked' : 'check'}>
+          <input type='checkbox' id={id} className='checkOrder' onClick={() => handleCheck(id, state)}/>
           <label htmlFor={id} className='customCheck' ></label>
         </div>
       </div>

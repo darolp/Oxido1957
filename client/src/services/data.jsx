@@ -1,6 +1,6 @@
-import { getFirestore, doc, getDoc, collection, getDocs, addDoc, updateDoc, setDoc, deleteDoc } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, addDoc, updateDoc, setDoc, deleteDoc, Firestore } from 'firebase/firestore'
 
-
+// PRODUCTS
 const getAll = async () => {
   const db = getFirestore();
   const productsColections = collection(db, 'productos')
@@ -40,6 +40,14 @@ const updateProduct = async (product) => {
   return await setDoc(productDoc, product)
 }
 
+const addProduct = (product) => {
+  const db = getFirestore();
+  const productCollection = collection(db, 'productos')
+  return addDoc(productCollection, product)
+}
+
+// ORDERS
+
 const newOrder = (order) => {
   const db = getFirestore();
   const ordersCollection = collection(db, 'orders');
@@ -54,11 +62,20 @@ const getAllOrders = async () => {
   return orders
 }
 
-const addProduct = (product) => {
+const deleteOrder = (id) => {
   const db = getFirestore();
-  const productCollection = collection(db, 'productos')
-  return addDoc(productCollection, product)
+  const orderDoc = doc(db, 'orders', id);
+  return deleteDoc(orderDoc)
 }
 
 
-export const productService = { getAll, get, newOrder, updeteStock, addProduct, updateProduct, deleteProduct, getAllOrders }
+
+const updateStateOrders = async (id, state) => {
+  const db = getFirestore();
+  const orderDoc = doc(db, 'orders' , id);
+  const newState = {state: state}
+  await updateDoc(orderDoc, newState);
+}
+
+
+export const productService = { getAll, get, newOrder, updeteStock, addProduct, updateProduct, deleteProduct, getAllOrders, deleteOrder, updateStateOrders }
